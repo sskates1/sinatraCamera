@@ -15,7 +15,7 @@ function countdown(){
             clearInterval(interval);
             console.log("resolved");
             $('#overlay').css("display","none");
-            // DO stuff here
+            takePhoto();
 
             return;
           }

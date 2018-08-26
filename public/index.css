@@ -1,6 +1,11 @@
 .liveview {
-  width: 100%;
+  margin: 0 auto;
+  width: auto;
   height: 100%;
+  display: block;
+}
+body {
+  background-color: black;
 }
 
 .countdown {
@@ -15,6 +20,7 @@
     top: calc(50% - 80px);
     left: calc(50%);
     line-height: 125px;
+    color: white;
 
 }
 
