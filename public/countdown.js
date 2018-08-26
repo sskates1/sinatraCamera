@@ -18,6 +18,7 @@ function countdown(){
             clearInterval(interval);
             console.log("resolved");
             $('#overlay').css("display","none");
+            $('.circle_animation').css('stroke-dashoffset',0);
             takePhoto();
 
             return;
