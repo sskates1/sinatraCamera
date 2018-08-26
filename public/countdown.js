@@ -11,6 +11,9 @@ function countdown(){
 
       var interval = setInterval(function() {
           $('h2').text(time-i);
+          if (i == 3) {
+            $.get('http://172.24.1.1:8080/ctrl/focus')
+          }
           if (i == time) {
             clearInterval(interval);
             console.log("resolved");
