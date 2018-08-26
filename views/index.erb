@@ -1,0 +1,15 @@
+<head>
+  <script type="text/javascript" src="javascripts/index.js"></script>
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+  <link rel=”stylesheet” type=”text/css” href=”/style.css” />
+  <script>
+    takePhoto()(function() {
+      return $.get('http://172.24.1.1:8080/ctrl/rec?action=start');
+    });
+    $('.liveview').click(takePhoto)
+
+  </script>
+</head>
+<body>
+  <img class="liveview" style="-webkit-user-select: none;" src="http://172.24.1.1:8080/liveView.mjpg">
+</body>
