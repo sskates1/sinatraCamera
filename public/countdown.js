@@ -1,7 +1,18 @@
+var countdownActive = false; // Global that stores whether countdown is active
+
 function countdown(){
   var dfr = new $.Deferred();
-  $('instructions').css("display","none");
-  $('#overlay').css("display","block");
+
+  if (countdownActive){
+    console.log("Already active");
+    dfr.reject();
+    return dfr.promise();
+  }
+  countdownActive = true; // Countdown in progress
+
+  $('instructions').css("display","none"); // Hide Instructions
+  $('#overlay').css("display","block"); // Display overlay
+
   setTimeout(function() {
     var time = 5; /* how long the timer will run (seconds) */
     $('#ctext').text(time);
@@ -23,6 +34,7 @@ function countdown(){
             takePhoto();
 
             $('instructions').css("display","block");
+            countdownActive = false;
             return;
           }
           $('.circle_animation').css('stroke-dashoffset', -1*((i+1)*(initialOffset/time)));
