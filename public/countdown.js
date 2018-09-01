@@ -10,8 +10,8 @@ function countdown(){
   }
   countdownActive = true; // Countdown in progress
 
-  $('instructions').css("display","none"); // Hide Instructions
-  $('#overlay').css("display","block"); // Display overlay
+  $('.instructions').css("display","none"); // Hide Instructions
+  $('.countdown').css("display","block"); // Display overlay
 
   setTimeout(function() {
     var time = 5; /* how long the timer will run (seconds) */
@@ -29,12 +29,13 @@ function countdown(){
           if (i == time) {
             clearInterval(interval);
             //console.log("resolved");
-            $('#overlay').css("display","none");
+            $('.countdown').css("display","none");
             $('.circle_animation').css('stroke-dashoffset',0);
             takePhoto();
 
-            $('instructions').css("display","block");
+            $('.instructions').css("display","block");
             countdownActive = false;
+
             return;
           }
           $('.circle_animation').css('stroke-dashoffset', -1*((i+1)*(initialOffset/time)));
