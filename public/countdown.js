@@ -1,7 +1,7 @@
 function countdown(){
   var dfr = new $.Deferred();
-  $('instructions').css("display","none");
-  $('#overlay').css("display","block");
+  $('.instructions').css("display","none");
+  $('.countdown').css("display","block");
   setTimeout(function() {
     var time = 5; /* how long the timer will run (seconds) */
     $('#ctext').text(time);
@@ -18,11 +18,11 @@ function countdown(){
           if (i == time) {
             clearInterval(interval);
             //console.log("resolved");
-            $('#overlay').css("display","none");
+            $('.countdown').css("display","none");
             $('.circle_animation').css('stroke-dashoffset',0);
             takePhoto();
 
-            $('instructions').css("display","block");
+            $('.instructions').css("display","block");
             return;
           }
           $('.circle_animation').css('stroke-dashoffset', -1*((i+1)*(initialOffset/time)));

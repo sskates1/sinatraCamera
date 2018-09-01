@@ -4,5 +4,5 @@ $(document).ready(function(){
   takePhoto = function() {
     return $.get('http://172.24.1.1:8080/ctrl/rec?action=start');
   };
-  $('.liveview').click(countdown);
+  $('.clickable').click(countdown);
 });
